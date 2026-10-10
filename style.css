@@ -1068,3 +1068,26 @@ footer .getq p {
     scroll-behavior: auto !important;
   }
 }
+
+.hours-info {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+.hours-info p {
+  margin: 0 0 0.25rem;
+}
+.status-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.badge-open {
+  background: #e6f4ea;
+  color: #137333;
+}
+.badge-closed {
+  background: #fce8e6;
+  color: #c5221f;
+}
