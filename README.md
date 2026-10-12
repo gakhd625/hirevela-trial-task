@@ -30,6 +30,8 @@ The form is a frontend interaction preview. Required fields are validated locall
 - VS Code
 - Browser DevTools
 - Copilot SDK in VS Code
+- Chatgpt
+- Claude
 
 ## Screenshot checklist
 
