@@ -966,6 +966,7 @@ footer {
   color: #cfdcec;
   margin-top: 0;
   position: relative;
+  overflow: hidden;
 }
 footer .roadtop {
   display: block;
@@ -978,7 +979,19 @@ footer .roadtop svg {
   width: 100%;
   height: 60px;
 }
+footer .footer-curve-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: min(92%, 1332px);
+  height: auto;
+  max-width: none;
+  pointer-events: none;
+  z-index: 0;
+}
 footer .cols {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr) 1.2fr;
   gap: 32px;
@@ -1011,6 +1024,8 @@ footer .getq p {
   color: #dbe8f7;
 }
 .legal {
+  position: relative;
+  z-index: 1;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding: 18px 20px;
   max-width: var(--wrap);
