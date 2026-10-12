@@ -333,6 +333,16 @@ nav.main .has-dd {
 .hero .crumbs a {
   color: var(--sky);
 }
+.hero-woman {
+  position: absolute;
+  right: clamp(1rem, 5vw, 5rem);
+  bottom: 42px;
+  z-index: 1;
+  width: min(34vw, 440px);
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
 
 /* Chicago #1 badge */
 .badge-no1 {
@@ -1113,10 +1123,22 @@ footer .getq p {
     margin-top: 1rem;
   }
 }
+@media (max-width: 1100px) {
+  .hero-woman {
+    right: -0.5rem;
+    bottom: 32px;
+    width: clamp(190px, 28vw, 300px);
+  }
+}
 @media (max-width: 860px) {
   .topbar .left a:not(.call),
   .topbar .right a:not(.es) {
     display: none;
+  }
+  .hero-woman {
+    right: -1.5rem;
+    bottom: 32px;
+    width: 250px;
   }
   .hero .wrap {
     padding-top: 32px;
@@ -1158,6 +1180,11 @@ footer .getq p {
   }
   .legal {
     padding-bottom: calc(18px + 76px);
+  }
+}
+@media (max-width: 600px) {
+  .hero-woman {
+    display: none;
   }
   .logo small {
     display: none;
