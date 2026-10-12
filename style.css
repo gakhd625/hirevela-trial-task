@@ -530,6 +530,18 @@ nav.main .has-dd {
   font-weight: 600;
   text-align: center;
 }
+.form-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+  padding: 0.7rem 0.8rem;
+  border-left: 3px solid var(--cta);
+  background: #fff8df;
+}
+.form-success a {
+  color: inherit;
+  font-weight: 700;
+}
 @media (max-width: 640px) {
   .form-row { grid-template-columns: 1fr; }
 }
