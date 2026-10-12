@@ -93,6 +93,7 @@
           <div class="crumbs">
             <a href="https://www.insureonthespot.com/">Home</a> / Contact
           </div>
+          <div class="badge-no1"><span class="trophy">🏆</span> Chicago's #1 Auto Insurance Agency</div>
           <h1 tabindex="-1">Contact us</h1>
           <p class="lede">
             Call <a href="tel:773-202-5060">773-202-5060</a> or use the
@@ -236,6 +237,67 @@
                 <p><b>Want to join a growing Chicagoland team?</b></p>
                 <a class="btn btn-ghost btn-sm"
                   href="https://www.insureonthespot.com/employment-opportunities/">Employment opportunities</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Send a message form -->
+          <div class="contact-grid" style="margin-top: 32px">
+            <div class="card">
+              <h2>Send us a message</h2>
+              <p style="color:var(--muted);font-size:0.95rem;margin-bottom:1rem">We usually respond within one business day.</p>
+              <div class="form-success" id="formSuccess" role="alert">
+                ✅ Message sent! We'll be in touch within one business day.
+              </div>
+              <form class="contact-form" id="contactForm" novalidate>
+                <div class="form-row">
+                  <div>
+                    <label for="cf-name">Full name *</label>
+                    <input id="cf-name" name="name" type="text" autocomplete="name" required placeholder="Jane Smith" />
+                  </div>
+                  <div>
+                    <label for="cf-phone">Phone</label>
+                    <input id="cf-phone" name="phone" type="tel" autocomplete="tel" placeholder="(773) 555-0100" />
+                  </div>
+                </div>
+                <div>
+                  <label for="cf-email">Email address *</label>
+                  <input id="cf-email" name="email" type="email" autocomplete="email" required placeholder="jane@example.com" />
+                </div>
+                <div>
+                  <label for="cf-subject">What can we help with?</label>
+                  <select id="cf-subject" name="subject">
+                    <option value="">Select a topic…</option>
+                    <option>Get a free quote</option>
+                    <option>SR22 insurance</option>
+                    <option>Renew my policy</option>
+                    <option>Report a claim</option>
+                    <option>Make a payment</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="cf-msg">Message *</label>
+                  <textarea id="cf-msg" name="message" required placeholder="Tell us how we can help…"></textarea>
+                </div>
+                <div>
+                  <button class="btn btn-cta" type="submit" id="cf-submit">Send message</button>
+                </div>
+              </form>
+            </div>
+            <div style="display:grid;gap:1rem;align-content:start">
+              <div class="card" style="background:var(--navy);color:#fff;border:0">
+                <h2 style="color:#fff;font-size:1.15rem">Why customers choose us</h2>
+                <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.6rem;margin-top:0.5rem">
+                  <li style="display:flex;gap:0.6rem;align-items:flex-start"><span style="color:#ffdc3b;font-size:1.1rem">✓</span><span>Chicago's #1 auto insurance agency since 1986</span></li>
+                  <li style="display:flex;gap:0.6rem;align-items:flex-start"><span style="color:#ffdc3b;font-size:1.1rem">✓</span><span>Lowest rates in Chicagoland — we shop, you save</span></li>
+                  <li style="display:flex;gap:0.6rem;align-items:flex-start"><span style="color:#ffdc3b;font-size:1.1rem">✓</span><span>SR22s electronically filed same day</span></li>
+                  <li style="display:flex;gap:0.6rem;align-items:flex-start"><span style="color:#ffdc3b;font-size:1.1rem">✓</span><span>Friendly bilingual staff (English &amp; Español)</span></li>
+                  <li style="display:flex;gap:0.6rem;align-items:flex-start"><span style="color:#ffdc3b;font-size:1.1rem">✓</span><span>4 convenient Chicagoland locations</span></li>
+                </ul>
+                <div style="margin-top:1.2rem">
+                  <a class="btn btn-cta" href="https://quote.insureonthespot.com/">Get my free quote</a>
+                </div>
               </div>
             </div>
           </div>

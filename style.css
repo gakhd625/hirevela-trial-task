@@ -291,10 +291,18 @@ nav.main .has-dd {
 
 /* hero: road curve */
 .hero {
-  background: var(--navy);
+  background: linear-gradient(135deg, #003d5c 0%, #005680 60%, #0070a8 100%);
   color: #fff;
   position: relative;
   overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(0,112,168,0.3) 0%, transparent 60%);
+  z-index: 1;
+  pointer-events: none;
 }
 .hero .wrap {
   position: relative;
@@ -304,7 +312,7 @@ nav.main .has-dd {
 }
 .hero h1 {
   color: #fff;
-  max-width: 16ch;
+  max-width: 20ch;
   margin-bottom: 0.35em;
 }
 .hero .lede {
@@ -325,6 +333,48 @@ nav.main .has-dd {
 .hero .crumbs a {
   color: var(--sky);
 }
+
+/* Chicago #1 badge */
+.badge-no1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: linear-gradient(135deg, #ffdc3b 0%, #ff9e00 100%);
+  color: #1a1100;
+  font: 800 0.95rem/1 var(--head);
+  padding: 0.45rem 1rem 0.45rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+  box-shadow: 0 4px 14px rgba(255,158,0,0.35);
+  letter-spacing: 0.01em;
+  animation: badge-pop 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+.badge-no1 .trophy {
+  font-size: 1.1rem;
+}
+@keyframes badge-pop {
+  from { transform: scale(0.6); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+/* Stars / social proof */
+.hero-stars {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #dbe8f7;
+}
+.hero-stars .stars {
+  color: #ffdc3b;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+}
+.hero-stars strong {
+  color: #fff;
+}
+
 .road {
   position: absolute;
   left: 0;
@@ -353,10 +403,11 @@ nav.main .has-dd {
   gap: 0.6rem 1.4rem;
   align-items: center;
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius);
   padding: 1rem 1.2rem;
   max-width: 760px;
+  backdrop-filter: blur(6px);
 }
 .quote-strip strong {
   font: 800 1.15rem var(--head);
@@ -375,7 +426,7 @@ nav.main .has-dd {
 }
 .quote-strip li::before {
   content: "✓";
-  color: var(--sky);
+  color: #ffdc3b;
   font-weight: 800;
   margin-right: 0.4rem;
 }
@@ -390,6 +441,87 @@ nav.main .has-dd {
   font-size: 0.85rem;
   color: var(--sky);
   font-weight: 600;
+}
+
+/* Blog filter pills */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.6rem;
+}
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font: 600 0.88rem var(--body);
+  background: var(--mist);
+  color: var(--navy-2);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.filter-pill:hover,
+.filter-pill.active {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+
+/* Contact form */
+.contact-form {
+  display: grid;
+  gap: 1rem;
+}
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  font: 1rem var(--body);
+  color: var(--ink);
+  background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(0,112,168,0.15);
+}
+.contact-form textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+.form-success {
+  display: none;
+  background: #e4f5ea;
+  color: var(--ok);
+  border: 1px solid #b2dfc2;
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .form-row { grid-template-columns: 1fr; }
 }
 
 main {
