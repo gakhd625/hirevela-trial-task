@@ -140,11 +140,63 @@
         hi = d[1] || d[0];
       tr.classList.toggle("today", now.day >= lo && now.day <= hi);
     });
+    document.querySelectorAll(".status-badge").forEach(function(badge) {
+      if(!badge.dataset.open) return;
+      var op = badge.dataset.open.split(":").map(Number);
+      var cl = badge.dataset.close.split(":").map(Number);
+      var wk = [op[0]*60 + (op[1]||0), cl[0]*60 + (cl[1]||0)];
+      var satOp = badge.dataset.satOpen.split(":").map(Number);
+      var satCl = badge.dataset.satClose.split(":").map(Number);
+      var sat = [satOp[0]*60 + (satOp[1]||0), satCl[0]*60 + (satCl[1]||0)];
+      var h = now.day >= 1 && now.day <= 5 ? wk : now.day === 6 ? sat : null;
+      var open = h && now.mins >= h[0] && now.mins < h[1];
+      badge.textContent = open ? "Open now" : "Closed";
+      badge.className = "status-badge badge-" + (open ? "open" : "closed");
+    });
   }
-  if (document.getElementById("stCS")) {
-    updateHours();
-    setInterval(updateHours, 60000);
+  updateHours();
+  setInterval(updateHours, 60000);
+
+  /* contact form – demo submit */
+  var contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = document.getElementById("cf-name");
+      var email = document.getElementById("cf-email");
+      var msg = document.getElementById("cf-msg");
+      var valid = true;
+      [name, email, msg].forEach(function (f) {
+        if (!f) return;
+        if (!f.value.trim()) {
+          f.style.borderColor = "#c0392b";
+          f.style.boxShadow = "0 0 0 3px rgba(192,57,43,0.15)";
+          valid = false;
+        } else {
+          f.style.borderColor = "";
+          f.style.boxShadow = "";
+        }
+      });
+      if (!valid) return;
+      var btn = document.getElementById("cf-submit");
+      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+      setTimeout(function () {
+        contactForm.style.display = "none";
+        var succ = document.getElementById("formSuccess");
+        if (succ) succ.style.display = "block";
+      }, 800);
+    });
   }
+
+  /* blog filter pills – active state */
+  document.querySelectorAll(".filter-pill").forEach(function (pill) {
+    pill.addEventListener("click", function () {
+      document.querySelectorAll(".filter-pill").forEach(function (p) {
+        p.classList.remove("active");
+      });
+      pill.classList.add("active");
+    });
+  });
 
   /* external links open in a new tab (keeps the preview open, works inside frames) */
   document.querySelectorAll('a[href^="https://"]').forEach(function (a) {
