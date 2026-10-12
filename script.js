@@ -157,7 +157,7 @@
   updateHours();
   setInterval(updateHours, 60000);
 
-  /* contact form – demo submit */
+  /* contact form – validate the static preview without claiming delivery */
   var contactForm = document.getElementById("contactForm");
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
@@ -178,13 +178,8 @@
         }
       });
       if (!valid) return;
-      var btn = document.getElementById("cf-submit");
-      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
-      setTimeout(function () {
-        contactForm.style.display = "none";
-        var succ = document.getElementById("formSuccess");
-        if (succ) succ.style.display = "block";
-      }, 800);
+      var succ = document.getElementById("formSuccess");
+      if (succ) succ.style.display = "block";
     });
   }
 
