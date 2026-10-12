@@ -341,96 +341,17 @@
               </div>
 
               <div class="mapbox">
-                <svg
-                  viewBox="0 0 440 476"
-                  role="group"
-                  aria-label="Schematic map of the four office locations"
-                >
-                  <rect width="440" height="476" rx="8" fill="#eef4fa" />
-                  <path
-                    d="M372 0 C368 60 360 120 356 200 S360 330 400 476 L440 476 L440 0Z"
-                    fill="#cfe6f7"
-                  />
-                  <text
-                    x="392"
-                    y="250"
-                    font-size="13"
-                    font-weight="600"
-                    fill="#4b7ba6"
-                    transform="rotate(90 392 250)"
-                    font-family="Figtree,Segoe UI,sans-serif"
-                  >
-                    Lake Michigan
-                  </text>
-                  <g stroke="#d3dfec" stroke-width="2" fill="none">
-                    <path d="M0 120H350M0 230H350M0 340H380M0 430H410" />
-                    <path d="M80 0V476M199 0V476M290 0V476" />
-                  </g>
-                  <text
-                    x="203"
-                    y="466"
-                    font-size="11"
-                    fill="#8095ae"
-                    font-family="Figtree,Segoe UI,sans-serif"
-                  >
-                    Cicero Ave
-                  </text>
-                  <circle cx="340" cy="207" r="5" fill="#0e2a52" />
-                  <text
-                    x="296"
-                    y="196"
-                    font-size="12"
-                    font-weight="600"
-                    fill="#0e2a52"
-                    font-family="Figtree,Segoe UI,sans-serif"
-                  >
-                    The Loop
-                  </text>
-                  <g
-                    class="mpin"
-                    data-loc="hq"
-                    tabindex="0"
-                    role="link"
-                    aria-label="Corporate Headquarters"
-                  >
-                    <circle class="dot" cx="188" cy="62" r="10" />
-                    <text x="204" y="67">Headquarters</text>
-                  </g>
-                  <g
-                    class="mpin"
-                    data-loc="melrose"
-                    tabindex="0"
-                    role="link"
-                    aria-label="Melrose Park"
-                  >
-                    <circle class="dot" cx="45" cy="141" r="10" />
-                    <text x="62" y="146">Melrose Park</text>
-                  </g>
-                  <g
-                    class="mpin"
-                    data-loc="berwyn"
-                    tabindex="0"
-                    role="link"
-                    aria-label="Berwyn"
-                  >
-                    <circle class="dot" cx="128" cy="228" r="10" />
-                    <text x="144" y="233">Berwyn</text>
-                  </g>
-                  <g
-                    class="mpin"
-                    data-loc="south"
-                    tabindex="0"
-                    role="link"
-                    aria-label="Chicago South"
-                  >
-                    <circle class="dot" cx="199" cy="444" r="10" />
-                    <text x="215" y="440">Chicago South</text>
-                  </g>
-                </svg>
-                <p class="cap">
-                  Schematic map, not to scale. Select a pin to jump to that
-                  office.
-                </p>
+                <iframe
+                  id="locationsMap"
+                  title="Insure On The Spot office locations"
+                  width="100%"
+                  height="100%"
+                  style="border:0; min-height: 480px;"
+                  loading="lazy"
+                  allowfullscreen
+                  referrerpolicy="no-referrer-when-downgrade"
+                  src="https://maps.google.com/maps?q=Insure+On+The+Spot&hl=en&output=embed&z=11"
+                ></iframe>
               </div>
             </div>
 

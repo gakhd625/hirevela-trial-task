@@ -612,38 +612,17 @@ aside .box {
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1rem;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
 }
-.mapbox svg {
+.mapbox iframe {
   width: 100%;
-  height: auto;
+  flex: 1;
+  min-height: 480px;
+  border: 0;
   display: block;
-}
-.mapbox .cap {
-  font-size: 0.85rem;
-  color: var(--muted);
-  margin: 0.5rem 0 0;
-}
-.mpin {
-  cursor: pointer;
-}
-.mpin circle.dot {
-  fill: var(--cta);
-  stroke: #fff;
-  stroke-width: 3;
-  transition: r 0.15s;
-}
-.mpin:hover circle.dot,
-.mpin:focus-visible circle.dot,
-.mpin.hl circle.dot {
-  r: 13;
-}
-.mpin text {
-  font: 700 13px var(--body);
-  fill: var(--navy);
-  paint-order: stroke;
-  stroke: #fff;
-  stroke-width: 4px;
 }
 .finder {
   display: flex;
