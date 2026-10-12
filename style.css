@@ -343,6 +343,16 @@ nav.main .has-dd {
   object-fit: contain;
   pointer-events: none;
 }
+.contact-hero-image {
+  position: absolute;
+  right: clamp(1rem, 7vw, 7rem);
+  bottom: 34px;
+  z-index: 1;
+  width: min(34vw, 440px);
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
 
 /* Chicago #1 badge */
 .badge-no1 {
@@ -1156,6 +1166,10 @@ footer .getq p {
     bottom: 32px;
     width: clamp(190px, 28vw, 300px);
   }
+  .contact-hero-image {
+    right: 0;
+    width: min(31vw, 320px);
+  }
 }
 @media (max-width: 860px) {
   .topbar .left a:not(.call),
@@ -1166,6 +1180,9 @@ footer .getq p {
     right: -1.5rem;
     bottom: 32px;
     width: 250px;
+  }
+  .contact-hero-image {
+    display: none;
   }
   .hero .wrap {
     padding-top: 32px;
